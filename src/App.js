@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 
 import { NodeMap } from './data'
 import { Stack } from './components/Stack'
@@ -7,8 +7,7 @@ import styles from './index.css'
 import  { NodeComponent } from './components/NodeComponent/NodeComponent'
 
 let stack = new Stack();
-let branches = []
-
+let sortedBranches = []
 const utilsDFS = ( node ) => {
     stack.push( node )
     if (node.adjList.length !== 0){
@@ -16,33 +15,66 @@ const utilsDFS = ( node ) => {
             utilsDFS(NodeMap[elem]);
         })
     } else {
-        branches.push(stack.getBranchFromStack());
+        sortedBranches.push(stack.getBranchFromStack())
         stack.pop();
     }
-    return branches
+    return sortedBranches
 }
 
 const DFS = () => {
     return utilsDFS(NodeMap.node1)
 }
 
+
 export const App = () => {
-    console.log(DFS())
+    const [branches, setBranches] = useState([])
+    const [dropDownState, setDropDownState] = useState(false)
+    const [branchIndex, setBranchIndex] = useState(0)
+
+    const printBranch = (index) => {
+        let listBranch = []
+        branches[index].map(elem => {
+            listBranch.push(<NodeComponent node={elem}/>)
+        }) 
+        return listBranch
+    }
+
+    const chooseBranch = () => {
+        setDropDownState(!dropDownState)
+    }
+
+    const printDropDown = () => {
+        let options = [];
+        
+        for(let index = 0; index < branches.length; index++)
+            options.push(index)
+
+        {options.map(option => 
+            <li onClick={setBranchIndex(option)}>
+                {option}
+            </li>
+        )}
+    
+        return options
+    }
+    useEffect(() => {
+        //here we call the DFS method to structure the data
+        setBranches(DFS());
+    }, [])
+    
     return <div className={styles.container}>
         <div className={styles.navContainer}>
             <div className={styles.title}> Flow dropout per step and service </div>  
             <div className={styles.branchesDropdown}> 
-                <div className={styles.branchesDropdownText}>Choose branch</div> 
+                <div className={styles.branchesDropdownText}
+                    onClick={chooseBranch}>Choose branch</div> 
+                    { dropDownState && <div class="dropdown"><ul>{printDropDown()}</ul></div> }
             </div>  
         </div>
         <div className={styles.horizontalList}>
-            <NodeComponent node={NodeMap.node1}/>
-            <NodeComponent node={NodeMap.node2}/>
-            <NodeComponent node={NodeMap.node3}/>
-            <NodeComponent node={NodeMap.nodeBranch2}/>
-            <NodeComponent node={NodeMap.nodeBranch3}/>
-            {/* <NodeComponent node={NodeMap.node2}/>
-            <NodeComponent node={NodeMap.node3}/> */}
+            {
+                branches && branches.length !== 0 && printBranch(branchIndex)
+            }
         </div>
     </div>
 }
