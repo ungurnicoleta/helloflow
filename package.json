@@ -1,0 +1,19 @@
+{
+  "name": "helloflow-project",
+  "version": "1.0.0",
+  "description": "Hello Flow interview",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ungurnicoleta/helloflow.git"
+  },
+  "author": "Nicoleta Ungur",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ungurnicoleta/helloflow/issues"
+  },
+  "homepage": "https://github.com/ungurnicoleta/helloflow#readme"
+}
