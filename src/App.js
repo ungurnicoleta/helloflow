@@ -38,8 +38,11 @@ export const App = () => {
         <div className={styles.horizontalList}>
             <NodeComponent node={NodeMap.node1}/>
             <NodeComponent node={NodeMap.node2}/>
-            <NodeComponent node={NodeMap.node1}/>
             <NodeComponent node={NodeMap.node3}/>
+            <NodeComponent node={NodeMap.nodeBranch2}/>
+            <NodeComponent node={NodeMap.nodeBranch3}/>
+            {/* <NodeComponent node={NodeMap.node2}/>
+            <NodeComponent node={NodeMap.node3}/> */}
         </div>
     </div>
 }

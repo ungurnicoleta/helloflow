@@ -1,5 +1,19 @@
-.mainBody{
+.mainBody {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
     width: 80px;
     border-radius: 10px;
     margin: 10px
+}
+
+.rectangleText {
+    transform: rotate(-90deg);
+    
+    font-family: "Rubik";
+    font-size: 18px;
+    text-align: center;
+
+    color: #323a44;
 }

@@ -6,6 +6,6 @@ export const Rectangle = (node) => {
     return <div className={styles.mainBody} 
                 style={{ height: `${node.node.value}%`, 
                          backgroundColor: node.node.type === "BASIC" ? "#d7ebff" : "#d4eeea"}}>
-        {node.node.value}
+        <div className={styles.rectangleText}>{node.node.label}</div>
     </div>
 }
