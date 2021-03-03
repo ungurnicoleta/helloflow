@@ -1,0 +1,28 @@
+.mainBody {
+    /* position: absolute; */
+    width: 200px;
+    height: 450px;
+    display: flex;
+    flex-direction: column;
+  
+}
+
+.flowContainer {
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.flowContainerPercentage { 
+    text-align: left;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 30px;
+    font-family: "Rubik";
+    font-size: 18px;
+    font-weight: 500;
+
+    color: #323a44;
+}
