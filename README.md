@@ -29,3 +29,6 @@ $ yarn start
   <br/>    
   <img src="https://github.com/ungurnicoleta/helloflow/blob/master/src/assets/images/Screenshot%202021-03-04%20at%2020.28.48.png" width="750" height="500"/>
 </p>
+
+## `VIDEO`
+```https://www.loom.com/share/3f1c1105bf3d4848a364488d142ec2bd```
