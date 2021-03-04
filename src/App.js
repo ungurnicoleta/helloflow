@@ -32,8 +32,8 @@ export const App = () => {
 
     const printBranch = (index) => {
         let listBranch = []
-        branches[index].map(elem => {
-            listBranch.push(<NodeComponent node={elem}/>)
+        branches[index].map((elem, idx) => {
+            listBranch.push(<div key={idx}><NodeComponent node={elem}/></div>)
         }) 
         return listBranch
     }

@@ -11,11 +11,11 @@ export const Dropdown = ({title, branches, selectedBranch}) => {
     const printDropDown = () => {
         let options = [];
         for(let index = 0; index < branches.length; index++)
-            options.push( <li onClick={() => sentBranchToParent(index)}> Branch {index + 1} </li>)
+            options.push( <li key={index} onClick={() => sendBranchToParent(index)}> Branch {index + 1} </li>)
         return options
     }
 
-    const sentBranchToParent = (index) => {
+    const sendBranchToParent = (index) => {
         selectedBranch(index);
     }
 
