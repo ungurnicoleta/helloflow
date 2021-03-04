@@ -5,7 +5,7 @@ import { Stack } from './components/Stack'
 
 import styles from './index.css'
 import  { NodeComponent } from './components/NodeComponent/NodeComponent'
-
+import  { Dropdown } from './components/Dropdown/Dropdown'
 let stack = new Stack();
 let sortedBranches = []
 const utilsDFS = ( node ) => {
@@ -28,7 +28,6 @@ const DFS = () => {
 
 export const App = () => {
     const [branches, setBranches] = useState([])
-    const [dropDownState, setDropDownState] = useState(false)
     const [branchIndex, setBranchIndex] = useState(0)
 
     const printBranch = (index) => {
@@ -39,37 +38,22 @@ export const App = () => {
         return listBranch
     }
 
-    const chooseBranch = () => {
-        setDropDownState(!dropDownState)
-    }
-
-    const printDropDown = () => {
-        let options = [];
-        
-        for(let index = 0; index < branches.length; index++)
-            options.push(index)
-
-        {options.map(option => 
-            <li onClick={setBranchIndex(option)}>
-                {option}
-            </li>
-        )}
-    
-        return options
-    }
     useEffect(() => {
         //here we call the DFS method to structure the data
         setBranches(DFS());
     }, [])
+
+    const selectedBranch = (childData) => {
+        setBranchIndex(childData)
+    }
     
     return <div className={styles.container}>
         <div className={styles.navContainer}>
             <div className={styles.title}> Flow dropout per step and service </div>  
-            <div className={styles.branchesDropdown}> 
-                <div className={styles.branchesDropdownText}
-                    onClick={chooseBranch}>Choose branch</div> 
-                    { dropDownState && <div class="dropdown"><ul>{printDropDown()}</ul></div> }
-            </div>  
+            <Dropdown  
+                title="Choose branch"
+                branches={branches}
+                selectedBranch={selectedBranch}/>
         </div>
         <div className={styles.horizontalList}>
             {
