@@ -35,5 +35,5 @@ $ yarn start
 * [Recorded video 2](https://www.loom.com/share/7b2a6ef39fda4a008b0f79d3f6e73783/)
 
 ---
-PS: Please let me know if you need help with the install process
+PS: Please let me know if you need help with the installation process
 
