@@ -39,16 +39,24 @@ body {
 
 
 .horizontalList{
+    width: 100%;
     min-height: 400px;
 
-    display: flex;
-    flex-direction: row;
+    padding: 0;
+    margin: auto;
 
+    display: -webkit-box;
+    flex-direction: row;
     align-items: center;
     justify-content: center;
 
-    white-space: nowrap;
-    overflow-y: auto;
     overflow-x: scroll;
 }
 
+
+
+@media only screen and (max-width: 600px) {
+    .container {
+        margin: 0px;
+    }
+  }

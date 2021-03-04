@@ -31,7 +31,8 @@ $ yarn start
 </p>
 
 ## `[VIDEO]`
-* [Recorded video](https://www.loom.com/share/3f1c1105bf3d4848a364488d142ec2bd/) 
+* [Recorded video 1](https://www.loom.com/share/3f1c1105bf3d4848a364488d142ec2bd/) 
+* [Recorded video 2](https://www.loom.com/share/7b2a6ef39fda4a008b0f79d3f6e73783/)
 
 ---
 PS: Please let me know if you need help with the install process
