@@ -6,8 +6,10 @@ import { Stack } from './components/Stack'
 import styles from './index.css'
 import  { NodeComponent } from './components/NodeComponent/NodeComponent'
 import  { Dropdown } from './components/Dropdown/Dropdown'
+
 let stack = new Stack();
 let sortedBranches = []
+
 const utilsDFS = ( node ) => {
     stack.push( node )
     if (node.adjList.length !== 0){
